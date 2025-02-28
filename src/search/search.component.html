@@ -1,0 +1,43 @@
+<div class="wrapper" *ngIf="dataSource">
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="destination">
+      <th mat-header-cell *matHeaderCellDef> Destination </th>
+      <td mat-cell *matCellDef="let element"> {{element.destination}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="flightNumber">
+      <th mat-header-cell *matHeaderCellDef> Flight Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.flightNumber}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="scheduledAt">
+      <th mat-header-cell *matHeaderCellDef> Scheduled At </th>
+      <td mat-cell *matCellDef="let element"> {{element.scheduledAt?element.scheduledAt : element.estimatedAt}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Details
+        </button>
+        <button mat-button>
+          <i class="fa-solid fa-cart-shopping"></i> Book Now
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
+
+<app-loading *ngIf="!dataSource" />

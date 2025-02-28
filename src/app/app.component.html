@@ -1,19 +1,19 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title></title>
-</head>
-<body>
-    <h1><i class="fa-brands fa-angular"></i></h1>
-    <p>
-      <a routerLink="/about">About us</a> | <a routerLink>Home</a>
-    </p>
-</body>
-</html>
+<mat-toolbar color="primary">
+  <span><i class="fa-solid fa-location-dot"></i> iTravel</span>
+  <span class="spacer"></span>
+  <a routerLink="/" mat-button>
+    <i class="fa-solid fa-house"></i> Home
+  </a>
+  <a routerLink="/about" mat-button>
+    <i class="fa-solid fa-circle-info"></i> About
+  </a>
+  <a routerLink="/info" mat-button>
+    <i class="fa-solid fa-search"></i> Info
+  </a>
+  <a routerLink="/airlines" mat-button>
+    <i class="fa-solid fa-plane-departure"></i> Airlines
+  </a>
+</mat-toolbar>
 
 
 <router-outlet />
