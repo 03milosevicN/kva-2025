@@ -5,8 +5,9 @@ import {AxiosError} from 'axios';
 import {FlightModel} from '../models/flight.model';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import {formatDate} from '../app/utils';
+import {formatDate, generateDestinationImage} from '../app/utils';
 import {LoadingComponent} from '../loading/loading.component';
+import {RouterLink} from '@angular/router';
 
 @Component({
   imports: [
@@ -15,6 +16,7 @@ import {LoadingComponent} from '../loading/loading.component';
     MatButtonModule,
     MatCardModule,
     LoadingComponent,
+    RouterLink,
   ],
   selector: 'app-home',
   styleUrl: './home.compwonent.css',
@@ -31,10 +33,9 @@ export class HomeComponent {
       .catch( (e: AxiosError) => this.error = `${e.code} : ${e.message}` );
   }
 
-  public generateDestinationImage(dest: string) {
-    return `https://img.pequla.com/destination/${dest.split(' ')[0].toLowerCase()}.jpg`
-  }
-
   // generated typescript bs
   protected readonly formatDate = formatDate;
+
+
+  protected readonly generateDestinationImage = generateDestinationImage;
 }

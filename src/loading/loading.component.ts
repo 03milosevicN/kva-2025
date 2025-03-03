@@ -8,7 +8,6 @@ import {NgIf} from "@angular/common";
         MatCard,
         MatCardContent,
         MatCardImage,
-        NgIf
     ],
   templateUrl: './loading.component.html',
   styleUrl: './loading.component.css'
