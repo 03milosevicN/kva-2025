@@ -52,7 +52,17 @@ export class UserService {
   }
 
 
-  static createOrder(order: OrderModel) {
+  static createOrder(order: {
+    id: number;
+    flightId: number;
+    flightNumber: string;
+    destination: string;
+    airline: any;
+    count: any;
+    pricePerItem: number;
+    status: string;
+    rating: null
+  }) {
     const arr = this.retrieveUsers();
     for (let user of arr) {
       if (user.email == localStorage.getItem('active')) {
