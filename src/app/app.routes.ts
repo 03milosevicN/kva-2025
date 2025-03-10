@@ -11,4 +11,5 @@ export const routes: Routes = [
   {path: "info", component: SearchComponent},
   {path: "airlines", component : AirlinesComponent},
   {path: "details/:id", component: DetailsComponent},
+  //TODO: add paths
 ];
