@@ -29,6 +29,11 @@ export class AirlineService {
       }
     ]
 
+
+  }
+
+  static getAirlineById(id: number) {
+    return this.getAirlines().find(airline => airline.id === id);
   }
 
 }
