@@ -11,8 +11,6 @@ import {NgIf} from '@angular/common';
   selector: 'app-airlines',
   imports: [
     MatTableModule,
-    LoadingComponent,
-    NgIf
   ],
   templateUrl: './airlines.component.html',
   styleUrl: './airlines.component.css'

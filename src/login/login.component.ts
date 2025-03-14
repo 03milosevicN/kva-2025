@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import {MatCard, MatCardActions, MatCardContent, MatCardHeader} from '@angular/material/card';
-import {MatFormField} from '@angular/material/form-field';
-import {MatInput} from '@angular/material/input';
-import {MatButton} from '@angular/material/button';
-import {Router} from '@angular/router';
+import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
+import {MatInput, MatInputModule} from '@angular/material/input';
+import {MatAnchor, MatButton} from '@angular/material/button';
+import {Router, RouterLink} from '@angular/router';
 import {UserService} from '../services/user.service';
 import {FormsModule} from '@angular/forms';
 
@@ -18,7 +18,11 @@ import {FormsModule} from '@angular/forms';
     MatCardActions,
     MatInput,
     MatButton,
-    FormsModule
+    FormsModule,
+    RouterLink,
+    MatAnchor,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -42,16 +46,5 @@ export class LoginComponent {
 
     alert('Incorrect email or password!');
   }
-
-  // public updateEmail(e: any) {
-  //   this.email = e.target.value
-  // }
-  //
-  // public updatePassword(e: any) {
-  //   this.password = e.target.value
-  // }
-  //
-
-
 
 }
