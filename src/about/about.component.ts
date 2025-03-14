@@ -3,9 +3,7 @@ import {MatSlideToggle} from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-about',
-  imports: [
-    MatSlideToggle
-  ],
+  imports: [],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })

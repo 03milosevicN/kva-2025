@@ -22,11 +22,15 @@ export class FlightService {
         'sort': 'scheduledAt,asc',
         'type': 'departure'
       }
-    })
+    });
   }
 
   static async getFlightById(id: number) {
-    return client.get(`/flight/${id}`)
+    return client.get(`/flight/${id}`);
+  }
+
+  static async getDestinations() {
+    return client.get('/flight/destination');
   }
 
 }

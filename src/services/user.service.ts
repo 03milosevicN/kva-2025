@@ -12,14 +12,35 @@ export class UserService {
         {
           email: 'user@example.com',
           password: 'user123',
+          firstName: 'Example',
+          lastName: 'User',
+          phone: '+381611234567',
+          address: 'Somewhere st., Belgrade',
+          favouriteDestination: 'Zurich',
           orders: [],
         }
-      ]
+      ];
 
       localStorage.setItem('users', JSON.stringify(arr));
     }
 
     return JSON.parse(localStorage.getItem('users')!);
+  }
+
+
+  static createUser(model: UserModel) {
+    const users = this.retrieveUsers();
+
+    for (let user of users) {
+      if (user.email === model.email) {
+        return false;
+      }
+    }
+
+    users.push(model);
+    localStorage.setItem('users', JSON.stringify(users));
+    return true;
+
   }
 
 
@@ -52,27 +73,17 @@ export class UserService {
   }
 
 
-  static createOrder(order: {
-    id: number;
-    flightId: number;
-    flightNumber: string;
-    destination: string;
-    airline: any;
-    count: any;
-    pricePerItem: number;
-    status: string;
-    rating: null
-  }) {
-    const arr = this.retrieveUsers();
+  static createOrder(order: OrderModel) {
+    const arr = this.retrieveUsers()
     for (let user of arr) {
       if (user.email == localStorage.getItem('active')) {
-        user.orders.push(order);
-        localStorage.setItem('users', JSON.stringify(arr));
-        return true;
+        user.orders.push(order)
+        localStorage.setItem('users', JSON.stringify(arr))
+        return true
       }
     }
 
-    return false;
+    return false
   }
 
 
@@ -131,6 +142,5 @@ export class UserService {
 
     return false;
   }
-
 
 }
